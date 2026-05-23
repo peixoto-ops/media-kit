@@ -1,0 +1,45 @@
+# AutoEQ Preset for JBL Endurance Race 2
+# Base: Harman IEM Target 2019v2
+# Ajuste: compensação para design aberto (earhook, sem selo)
+# O JBL Endurance Race 2 não possui medição específica nos bancos
+# AutoEQ (oratory1990/Crinacle/Squiglink). Esta curva foi gerada
+# a partir das características conhecidas do fone:
+#   - Driver 8mm dinâmico
+#   - Design aberto (earhook) → perda de sub-graves abaixo de 100Hz
+#   - Assinatura JBL: V-shape suave com presença marcante
+#
+# Pré-requisito: adicionar "Equalizador Gráfico" (GraphicEQ) 
+# como efeito no EasyEffects (lado Output) e importar este arquivo.
+#
+# Fonte da metodologia: https://github.com/jaakkopasanen/AutoEq
+
+Preamp: -6.0 dB
+
+# Sub-graves: reforço para compensar design aberto
+Filter 1: PK 26 Hz 0.80 Q 7.0 dB
+Filter 2: PK 40 Hz 0.70 Q 5.5 dB
+Filter 3: PK 63 Hz 0.75 Q 4.0 dB
+
+# Graves médios: suave descida para encontro com Harman
+Filter 4: PK 100 Hz 0.60 Q 2.5 dB
+Filter 5: PK 160 Hz 0.70 Q 1.0 dB
+
+# Médios inferiores: reduz acúmulo natural
+Filter 6: PK 250 Hz 0.90 Q -1.5 dB
+Filter 7: PK 400 Hz 0.80 Q -2.0 dB
+Filter 8: PK 630 Hz 0.70 Q -1.0 dB
+Filter 9: PK 1000 Hz 0.80 Q 0.0 dB
+
+# Médios superiores: presença e clareza vocal
+Filter 10: PK 1600 Hz 0.90 Q 1.5 dB
+Filter 11: PK 2500 Hz 0.80 Q 2.5 dB
+Filter 12: PK 4000 Hz 0.70 Q 3.0 dB
+
+# Agudos: brilho controlado
+Filter 13: PK 6300 Hz 0.80 Q 1.5 dB
+Filter 14: PK 8000 Hz 0.90 Q 0.0 dB
+Filter 15: PK 10000 Hz 0.70 Q -1.0 dB
+
+# Extremos: roll-off natural
+Filter 16: PK 12500 Hz 0.80 Q -2.0 dB
+Filter 17: PK 16000 Hz 1.00 Q -3.0 dB
